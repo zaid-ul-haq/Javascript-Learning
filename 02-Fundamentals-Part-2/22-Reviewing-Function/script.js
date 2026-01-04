@@ -18,5 +18,5 @@ const yearLeftForRetirement = function (birthYear, name) {
     }
 }
 
-console.log(yearLeftForRetirement(2002, "Zaid"));
+console.log(yearLeftForRetirement(2002, "Zaidd"));
 console.log(yearLeftForRetirement(1950, "Jhon"));
