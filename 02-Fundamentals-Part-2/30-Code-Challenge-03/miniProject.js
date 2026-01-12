@@ -46,6 +46,3 @@ console.log(johnBMI.calcBMI(), markBMI.calcBMI());
 const checkBMI = (johnBMI.bmi > markBMI.bmi) ? `Jhon's BMI ${johnBMI.bmi} is higher than Mark's ${markBMI.bmi}` : `Mark's BMI ${markBMI.bmi} is higher than Jhon's ${johnBMI.bmi}`
 
 console.log(checkBMI);
-
-
-
