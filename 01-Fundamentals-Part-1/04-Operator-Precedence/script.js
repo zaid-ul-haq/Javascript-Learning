@@ -10,15 +10,15 @@ console.log(current - 1991 > current - 2018);
 // Maths has high precedence that comparison
 
 let x, y;
-x = y = 10;  //start from right to left
+x = y = 10; //start from right to left
 
-let avagAge = ageZaid + ageNayab / 2
+let avagAge = ageZaid + ageNayab / 2;
 console.log(avagAge);
 
-let avgAge = (ageZaid + ageNayab) / 2
+let avgAge = (ageZaid + ageNayab) / 2;
+console.log(avgAge);
 console.log(avgAge);
 //Both have different result
 //Because in first ageNayab / 2 get result then result + ageZaid
 //In second first (ageZaid + ageNayab) then result / 2
 //Grouping () have highest Precedence
-
