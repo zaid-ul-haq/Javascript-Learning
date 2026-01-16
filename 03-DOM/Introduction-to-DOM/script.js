@@ -10,13 +10,14 @@ document.querySelector(".game__number").textContent = 14;
 document.querySelector(".game__input").value = 14;
  */
 
-const secretNumber = 14;
+const secretNumber = 14; // The Correct Secret number
 // Handling Event Click
 // When We click on a button, the function will called..
 document.querySelector(".btn--primary").addEventListener("click", function () {
   let guess = Number(document.querySelector(".game__input").value);
-  console.log(guess);
+  // console.log(guess);
 
+  // Will Check Condition, according to that the Status Test will change
   if (!guess) {
     document.querySelector(".game__message").textContent =
       "⛔No Number Entered!";
