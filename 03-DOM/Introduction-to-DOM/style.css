@@ -1,0 +1,167 @@
+/* ---------- Root & Reset ---------- */
+:root {
+    --bg-dark: #0f0f14;
+    --bg-card: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.15);
+    --accent: #6ef3d6;
+    --accent-glow: rgba(110, 243, 214, 0.6);
+    --text-main: #ffffff;
+    --text-muted: #b5b5c3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1a1a2e, var(--bg-dark));
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- Main Game Container ---------- */
+.game {
+    width: 90%;
+    max-width: 800px;
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+    padding: 2.5rem;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Header ---------- */
+.game__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.game__range {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- Title ---------- */
+.game__title {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* ---------- Number Box ---------- */
+.game__number-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.game__number {
+    width: 140px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--accent), #38bdf8);
+    color: #000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* ---------- Play Area ---------- */
+.game__play {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* ---------- Input Group ---------- */
+.game__input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.game__input {
+    height: 60px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    outline: none;
+}
+
+.game__input::placeholder {
+    color: var(--text-muted);
+}
+
+/* ---------- Status ---------- */
+.game__status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game__message {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.game__scores p {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    cursor: pointer;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.btn--ghost {
+    padding: 0.6rem 1.4rem;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+}
+
+.btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn--primary {
+    padding: 0.9rem;
+    background: linear-gradient(135deg, var(--accent), #38bdf8);
+    color: #000;
+    font-size: 1rem;
+    box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+    .game__play {
+        grid-template-columns: 1fr;
+    }
+}
