@@ -19,28 +19,42 @@ document.querySelector(".btn--primary").addEventListener("click", function () {
   // console.log(guess);
 
   // Will Check Condition, according to that the Status Test will change
-  if (guess <= 0) {
+
+  // When 0 or No Input
+  if (!guess || guess <= 0) {
     document.querySelector(".game__message").textContent =
       "⛔No Number Entered!";
+
+    // When Player Win
   } else if (guess === secretNumber) {
     document.querySelector(".game__message").textContent = "🎉 Correct Number";
+
+    // When guess is greater than actual Number
   } else if (guess > secretNumber) {
+    score--;
     if (score > 0) {
       document.querySelector(".game__message").textContent =
         "📈The number is High!";
-      score--;
       document.querySelector(".game_score").textContent = score;
+      // When score become 0
     } else {
+      document.querySelector(".game_score").textContent = 0;
       document.querySelector(".game__message").textContent =
         "💥You lost the game!";
     }
+
+    // When guess is greater than actual Number
   } else if (guess < secretNumber) {
+    score--;
     if (score > 0) {
       document.querySelector(".game__message").textContent =
         "📉The number is Low!";
-      score--;
+
       document.querySelector(".game_score").textContent = score;
+
+      // When score become 0
     } else {
+      document.querySelector(".game_score").textContent = 0;
       document.querySelector(".game__message").textContent =
         "💥You lost the game!";
     }
