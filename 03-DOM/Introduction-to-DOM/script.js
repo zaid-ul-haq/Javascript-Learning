@@ -29,6 +29,7 @@ document.querySelector(".btn--primary").addEventListener("click", function () {
   } else if (guess === secretNumber) {
     document.querySelector(".game__message").textContent = "🎉 Correct Number";
     // Theme Color Change when the Number become true
+    document.body.style.background = "#E5F6DF";
     document.querySelector(".game__number").textContent = secretNumber;
     document.querySelector(".game").style.background = "green";
     document.querySelector(".game__number").style.background = "white";
@@ -69,3 +70,24 @@ document.querySelector(".btn--primary").addEventListener("click", function () {
     }
   }
 });
+
+// Reset Functionality
+const resetGame = function () {
+  document.querySelector(".game__number").textContent = "?";
+  document.querySelector(".game__message").textContent = "Start guessing...";
+  document.body.style.background =
+    "radial-gradient(circle at top, #1a1a2e, #0f0f14)";
+  document.querySelector(".game").style.background =
+    "rgba(255, 255, 255, 0.08)";
+  document.querySelector(".game__number").style.background =
+    "linear-gradient(135deg, #6ef3d6, #38bdf8)";
+  document.querySelector(".game__number").style.color = "black";
+  document.querySelector(".btn--primary").style.background =
+    "linear-gradient(135deg, #6ef3d6, #38bdf8)";
+  document.querySelector(".btn--primary").style.color = "black";
+  document.querySelector(".btn--ghost").style.background =
+    "rgba(255, 255, 255, 0.08)";
+  document.querySelector(".btn--ghost").style.color = "white";
+
+  document.querySelector(".game__input").value = "?";
+};
