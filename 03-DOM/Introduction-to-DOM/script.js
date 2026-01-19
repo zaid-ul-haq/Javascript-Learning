@@ -28,6 +28,15 @@ document.querySelector(".btn--primary").addEventListener("click", function () {
     // When Player Win
   } else if (guess === secretNumber) {
     document.querySelector(".game__message").textContent = "🎉 Correct Number";
+    // Theme Color Change when the Number become true
+    document.querySelector(".game__number").textContent = secretNumber;
+    document.querySelector(".game").style.background = "green";
+    document.querySelector(".game__number").style.background = "white";
+    document.querySelector(".game__number").style.color = "green";
+    document.querySelector(".btn--primary").style.background = "white";
+    document.querySelector(".btn--primary").style.color = "green";
+    document.querySelector(".btn--ghost").style.background = "white";
+    document.querySelector(".btn--ghost").style.color = "green";
 
     // When guess is greater than actual Number
   } else if (guess > secretNumber) {
