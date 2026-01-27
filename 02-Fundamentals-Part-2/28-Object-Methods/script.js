@@ -4,19 +4,19 @@
 
 // Creating an object with properties and methods
 const myIntro = {
-    // Basic information
-    firstName: "Zaid",                 // String value
-    lastName: "UlHaq",                 // String value
-    birthYear: 2005,                   // Number value
-    designation: "Softwear Engineering Student", // String value
-    friends: ["Aizaz", "Habib", "Usman"], // Array value
-    hasDriverLicense: true,            // Boolean value
+  // Basic information
+  firstName: "Zaid", // String value
+  lastName: "UlHaq", // String value
+  birthYear: 2005, // Number value
+  designation: "Softwear Engineering Student", // String value
+  friends: ["Aizaz", "Habib", "Usman"], // Array value
+  hasDriverLicense: true, // Boolean value
 
-    // --------------------------------------------------
-    // Function declared as a value inside the object
-    // --------------------------------------------------
+  // --------------------------------------------------
+  // Function declared as a value inside the object
+  // --------------------------------------------------
 
-    /*
+  /*
     // Method with a custom parameter
     calcAge: function (birthYear) {
         return 2026 - birthYear;
@@ -25,7 +25,7 @@ const myIntro = {
     // inside the object, so passing it again is unnecessary
     */
 
-    /*
+  /*
     // Accessing object property using `this` keyword
     calcAge: function () {
         return 2026 - this.birthYear;
@@ -37,21 +37,24 @@ const myIntro = {
     }
     */
 
-    // --------------------------------------------------
-    // Calculate age once and store it as a new property
-    // --------------------------------------------------
-    calcAge: function () {
-        this.age = 2026 - this.birthYear; // New property created
-        return this.age;
-    },
+  // Note : **This** keyword is not working in an arraow Function
 
-    // --------------------------------------------------
-    // Method that returns a summary using other properties
-    // --------------------------------------------------
-    getSummary: function () {
-        return `${this.firstName} is a ${this.calcAge()} Years old ${this.designation}, and he has ${this.hasDriverLicense ? "a" : "no"
-            } driver License.`;
-    }
+  // --------------------------------------------------
+  // Calculate age once and store it as a new property
+  // --------------------------------------------------
+  calcAge: function () {
+    this.age = 2026 - this.birthYear; // New property created
+    return this.age;
+  },
+
+  // --------------------------------------------------
+  // Method that returns a summary using other properties
+  // --------------------------------------------------
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} Years old ${this.designation}, and he has ${
+      this.hasDriverLicense ? "a" : "no"
+    } driver License.`;
+  },
 };
 
 // --------------------------------------------------
@@ -128,11 +131,12 @@ console.log(myIntro.age);
 // console.log(myIntro.age); // ❌ Undefined because calcAge was not called yet because age is inside calcAge.
 
 console.log(myIntro.calcAge()); // Call function first
-console.log(myIntro.age);       // Now age is available
+console.log(myIntro.age); // Now age is available
 
 console.log(
-    `${myIntro.firstName} is a ${myIntro.age} Years old ${myIntro.designation}, and he has ${myIntro.hasDriverLicense ? "a" : "no"
-    } driver License.`
+  `${myIntro.firstName} is a ${myIntro.age} Years old ${myIntro.designation}, and he has ${
+    myIntro.hasDriverLicense ? "a" : "no"
+  } driver License.`,
 );
 
 // Second method (recommended)
